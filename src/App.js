@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import uuid from 'uuid'
 
 import Form from "./Form";
 import "./App.css";
@@ -27,7 +28,7 @@ export default () => {
       <div>
         {todos.map(({ text, complete }, i) => (
           <div
-            key={text}
+            key={uuid()}
             onClick={() => toggleComplete(i)}
             style={{
               textDecoration: complete ? "line-through" : ""
